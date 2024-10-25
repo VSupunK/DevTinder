@@ -2,7 +2,17 @@ const express = require('express');
 
 const app = express(); // create express app 
 
-app.use('/', (req, res) => {
+// this will only handle GET requests to /user
+app.get('/user/:userId/:name/:password', (req, res) => {
+    console.log(req.params);
+    res.send({
+        "fistName": "John",
+        "lastName": "Doe",
+    })
+})
+
+//this will match all the HTTP methods API calls to /test
+app.use('/test', (req, res) => {
     res.send("Hello World");
 })
 
