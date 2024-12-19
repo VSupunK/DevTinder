@@ -11,6 +11,6 @@ const adminAuth = (req, res, next) => {
   }
 };
 
-modules.exports = {
+module.exports = {
   adminAuth,
 };
